@@ -1,19 +1,25 @@
 // Страница избранного
 function renderFavorites() {
-    const favorites = getFavorites();
-    const favoriteProducts = products.filter(p => favorites.includes(p.id));
-    const grid     = document.getElementById('favoritesGrid');
-    const emptyMsg = document.getElementById('emptyFavorites');
+  // Рендер избранного
+  const favorites = getFavorites(); // Список избранного
+  const favoriteProducts = products.filter((p) => favorites.includes(p.id)); // Товары в избранном
+  const grid = document.getElementById("favoritesGrid"); // Контейнер
+  const emptyMsg = document.getElementById("emptyFavorites"); // Сообщение
 
-    if (favoriteProducts.length === 0) {
-        grid.innerHTML = '';
-        emptyMsg.style.display = 'block';
-        return;
-    }
-    emptyMsg.style.display = 'none';
-    grid.innerHTML = favoriteProducts
-        .map(product => createProductCard(product))
-        .join('');
-}
+  if (favoriteProducts.length === 0) {
+    // Если пусто
+    grid.innerHTML = ""; // Очищаем
+    emptyMsg.style.display = "block"; // Показываем сообщение
+    return; // Выходим
+  }
 
-document.addEventListener('DOMContentLoaded', () => { renderFavorites(); });
+  emptyMsg.style.display = "none"; // Скрываем сообщение
+  grid.innerHTML = favoriteProducts
+    .map((product) => createProductCard(product))
+    .join(""); // Рендер карточек
+} // Конец renderFavorites
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Инициализация
+  renderFavorites(); // Рендер
+}); // Конец обработчика
