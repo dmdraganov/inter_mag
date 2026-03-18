@@ -700,3 +700,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }); // Конец обработчика
   } // Конец if
 }); // Конец DOMContentLoaded
+// Конец скрипта
