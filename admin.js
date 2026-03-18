@@ -57,3 +57,5 @@ function renderAdminStats() { // Рендер общей статистики
 document.addEventListener('DOMContentLoaded', () => { // Инициализация
     renderAdminStats(); // Рендер статистики
 }); // Конец обработчика
+
+//fix
