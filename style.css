@@ -1,0 +1,91 @@
+* { /* Универсальный селектор */
+    margin: 0; /* Сброс внешних отступов */
+    padding: 0; /* Сброс внутренних отступов */
+    box-sizing: border-box; /* Учет границ в размерах */
+} /* Конец * */
+/* Пустая строка */
+:root { /* Корневые переменные */
+    --primary-color: #2563eb; /* Основной цвет */
+    --secondary-color: #1e40af; /* Вторичный цвет */
+    --danger-color: #dc2626; /* Цвет опасности */
+    --success-color: #16a34a; /* Цвет успеха */
+    --text-color: #1f2937; /* Цвет текста */
+    --bg-color: #f3f4f6; /* Цвет фона */
+    --white: #ffffff; /* Белый */
+    --border-color: #e5e7eb; /* Цвет границ */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Маленькая тень */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Большая тень */
+} /* Конец :root */
+/* Пустая строка */
+body { /* Тело страницы */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; /* Шрифт */
+    line-height: 1.6; /* Межстрочный интервал */
+    color: var(--text-color); /* Цвет текста */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец body */
+/* Пустая строка */
+.container { /* Контейнер */
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 20px; /* Горизонтальные отступы */
+} /* Конец .container */
+/* Пустая строка */
+/* Header */ /* Раздел шапки */
+.header { /* Шапка */
+    background-color: var(--white); /* Фон */
+    box-shadow: var(--shadow); /* Тень */
+    position: sticky; /* Прилипание */
+    top: 0; /* Позиция сверху */
+    z-index: 100; /* Слой */
+} /* Конец .header */
+/* Пустая строка */
+.header-container { /* Контейнер шапки */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    align-items: center; /* Выравнивание */
+    padding: 1rem 20px; /* Отступы */
+} /* Конец .header-container */
+/* Пустая строка */
+.logo h1 { /* Заголовок логотипа */
+    color: var(--primary-color); /* Цвет */
+    font-size: 1.5rem; /* Размер */
+} /* Конец .logo h1 */
+/* Пустая строка */
+.nav-list { /* Список навигации */
+    display: flex; /* Флекс */
+    list-style: none; /* Без маркеров */
+    gap: 2rem; /* Расстояние */
+} /* Конец .nav-list */
+/* Пустая строка */
+.nav-list a { /* Ссылки меню */
+    text-decoration: none; /* Без подчеркивания */
+    color: var(--text-color); /* Цвет текста */
+    font-weight: 500; /* Насыщенность */
+    transition: color 0.3s; /* Переход */
+    position: relative; /* Относительная позиция */
+} /* Конец .nav-list a */
+/* Пустая строка */
+.nav-list a:hover { /* Ховер ссылок */
+    color: var(--primary-color); /* Цвет при наведении */
+} /* Конец .nav-list a:hover */
+/* Пустая строка */
+.badge { /* Бейдж */
+    background-color: var(--danger-color); /* Фон */
+    color: var(--white); /* Цвет */
+    border-radius: 50%; /* Круг */
+    padding: 2px 6px; /* Отступы */
+    font-size: 0.75rem; /* Размер текста */
+    position: absolute; /* Абсолютная позиция */
+    top: -8px; /* Смещение сверху */
+    right: -10px; /* Смещение справа */
+} /* Конец .badge */
+/* Пустая строка */
+.burger { /* Кнопка бургера */
+    display: none; /* Скрыто */
+    flex-direction: column; /* Колонка */
+    gap: 4px; /* Промежуток */
+    background: none; /* Без фона */
+    border: none; /* Без рамки */
+    cursor: pointer; /* Курсор */
+    padding: 5px; /* Отступы */
+} /* Конец .burger */
