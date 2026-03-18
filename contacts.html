@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html> <!-- Тип документа -->
 <html lang="ru"> <!-- Корневой элемент -->
 <head> <!-- Шапка -->
@@ -73,3 +74,189 @@
     <script src="auth.js"></script> <!-- Авторизация -->
     </body> <!-- Конец body -->
 </html> <!-- Конец документа -->
+=======
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Свяжитесь с нами – интернет-магазин TechStore. Адрес, телефон, email и форма обратной связи.">
+    <title>Контакты - TechStore</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Дополнительные стили для формы на странице контактов */
+        .contact-form {
+            margin-top: 40px;
+            padding: 24px;
+            background: #f9fafb;
+            border-radius: 16px;
+        }
+        .contact-form h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .form-error {
+            color: #dc2626;
+            font-size: 14px;
+            margin-top: 4px;
+            display: block;
+        }
+        .form-success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><h1>TechStore</h1></a>
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Каталог</a></li>
+                    <li><a href="favorites.html">Избранное <span class="badge" id="favCount">0</span></a></li>
+                    <li><a href="cart.html">Корзина <span class="badge" id="cartCount">0</span></a></li>
+                    <li><a href="profile.html">Личный кабинет</a></li>
+                    <li><a href="admin.html">Админ панель</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html" class="active">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper-full">
+                <div class="content">
+                    <h2>Контакты</h2>
+                    <div class="contacts-content">
+                        <div class="contact-item">
+                            <h3>Адрес:</h3>
+                            <p>г. Москва, ул. Примерная, д. 123</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Телефон:</h3>
+                            <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Email:</h3>
+                            <p><a href="mailto:info@techstore.ru">info@techstore.ru</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Режим работы:</h3>
+                            <p>Пн-Пт: 9:00 - 20:00<br>Сб-Вс: 10:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <!-- Форма обратной связи -->
+                    <div class="contact-form">
+                        <h3>Напишите нам</h3>
+                        <form id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label class="form-label" for="name">Ваше имя *</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Иван Иванов">
+                                <span class="form-error" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="ivan@example.com">
+                                <span class="form-error" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Сообщение *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Ваше сообщение..."></textarea>
+                                <span class="form-error" id="messageError"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <div id="formSuccess" class="form-success" style="display: none;">Сообщение отправлено! Мы свяжемся с вами в ближайшее время.</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="common.js"></script>
+    <script src="auth.js"></script>
+    <!-- Скрипт валидации формы -->
+    <script>
+        (function() {
+            const form = document.getElementById('contactForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
+            const successDiv = document.getElementById('formSuccess');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Отменяем реальную отправку
+
+                // Сброс ошибок
+                nameError.textContent = '';
+                emailError.textContent = '';
+                messageError.textContent = '';
+                successDiv.style.display = 'none';
+
+                let isValid = true;
+
+                // Проверка имени
+                if (!nameInput.value.trim()) {
+                    nameError.textContent = 'Пожалуйста, введите ваше имя.';
+                    isValid = false;
+                }
+
+                // Проверка email
+                const email = emailInput.value.trim();
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email) {
+                    emailError.textContent = 'Пожалуйста, введите email.';
+                    isValid = false;
+                } else if (!emailPattern.test(email)) {
+                    emailError.textContent = 'Введите корректный email (например, name@domain.ru).';
+                    isValid = false;
+                }
+
+                // Проверка сообщения
+                if (!messageInput.value.trim()) {
+                    messageError.textContent = 'Пожалуйста, напишите сообщение.';
+                    isValid = false;
+                }
+
+                // Если всё валидно
+                if (isValid) {
+                    // Здесь можно отправить данные через fetch, если нужно
+                    // Но для демонстрации просто покажем успех
+                    successDiv.style.display = 'block';
+                    form.reset(); // Очистить форму
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+>>>>>>> origin/feature_muhamedzhanova

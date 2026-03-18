@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// Личный кабинет
+>>>>>>> origin/feature_muhamedzhanova
 function renderProfile() { // Рендер профиля
     renderOrderHistory(); // История заказов
     renderProfileFavorites(); // Избранное
